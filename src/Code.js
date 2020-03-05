@@ -22,12 +22,15 @@ function include(param) {
   return HtmlService.createHtmlOutputFromFile(param).getContent();
 }
 
-function getFormDataUI(formObject) {
-  var doc = DocumentApp.getActiveDocument();
-  var body = doc.getBody();
+function getFormDataUI(formObject = {}) {
+  // var doc = DocumentApp.getActiveDocument();
+  // var body = doc.getBody();
   // const {name,email,birthday} = formObject;
 
-  body.appendParagraph(formObject.name + formObject.email + formObject.birthday);
+  // body.appendParagraph(formObject.name + formObject.email + formObject.birthday);
   
   // body.appendPageBreak();
+  return formObject;
 }
+
+module.exports = getFormDataUI;

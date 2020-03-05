@@ -1,0 +1,23 @@
+{
+  "name": "addon-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Core.js",
+  "dependencies": {
+    "jest": "^25.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grimz11/appscript.git"
+  },
+  "author": "Mark Andog",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grimz11/appscript/issues"
+  },
+  "homepage": "https://github.com/grimz11/appscript#readme"
+}
