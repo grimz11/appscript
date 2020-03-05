@@ -12,11 +12,12 @@ function onOpen(e) {
 function showSidebarUI() {
   const FILENAME = 'UI';
   const TITLE = 'Personal Details'
-  var ui = HtmlService.createTemplateFromFile(FILENAME)
-  .evaluate()
-  .setTitle(TITLE)
-  .setSandboxMode(HtmlService.SandboxMode.IFRAME);
-  DocumentApp.getUi().showSidebar(ui);
+  // var ui = HtmlService.createTemplateFromFile(FILENAME)
+  // .evaluate()
+  // .setTitle(TITLE)
+  // .setSandboxMode(HtmlService.SandboxMode.IFRAME);
+  // DocumentApp.getUi().showSidebar(ui);
+  return FILENAME;
 }
 function include(param) {
   return HtmlService.createHtmlOutputFromFile(param).getContent();
@@ -33,4 +34,4 @@ function getFormDataUI(formObject = {}) {
   return formObject;
 }
 
-module.exports = getFormDataUI;
+module.exports =  {showSidebarUI, getFormDataUI};
