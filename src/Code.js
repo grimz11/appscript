@@ -4,19 +4,19 @@ function onInstall(e) {
 function onOpen(e) {
   const menu = DocumentApp.getUi().createAddonMenu();
   // Note: Cannot add user-specific menu items here, because user id is not available at this stage.
-  // menu.addItem('Launch', 'showMarkup');
-  // menu.addSeparator();
+  menu.addItem('Launch', 'showMarkup');
+  menu.addSeparator();
   menu.addItem('Launch', 'showSidebarUI');
   menu.addToUi();
 }
 function showSidebarUI() {
   const FILENAME = 'UI';
   const TITLE = 'Personal Details'
-  // var ui = HtmlService.createTemplateFromFile(FILENAME)
-  // .evaluate()
-  // .setTitle(TITLE)
-  // .setSandboxMode(HtmlService.SandboxMode.IFRAME);
-  // DocumentApp.getUi().showSidebar(ui);
+  var ui = HtmlService.createTemplateFromFile(FILENAME)
+  .evaluate()
+  .setTitle(TITLE)
+  .setSandboxMode(HtmlService.SandboxMode.IFRAME);
+  DocumentApp.getUi().showSidebar(ui);
   return FILENAME;
 }
 function include(param) {
@@ -24,13 +24,13 @@ function include(param) {
 }
 
 function getFormDataUI(formObject = {}) {
-  // var doc = DocumentApp.getActiveDocument();
-  // var body = doc.getBody();
+  var doc = DocumentApp.getActiveDocument();
+  var body = doc.getBody();
   // const {name,email,birthday} = formObject;
 
-  // body.appendParagraph(formObject.name + formObject.email + formObject.birthday);
+  body.appendParagraph(formObject.name + formObject.email + formObject.birthday);
   
-  // body.appendPageBreak();
+  body.appendPageBreak();
   return formObject;
 }
 
