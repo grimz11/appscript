@@ -1,20 +1,17 @@
-const exportedFunc = require('./Code');
-
+// const exportedFunc = require('./Code');
 if ((typeof GasTap)==='undefined') { // GasT Initialization. (only if not initialized yet.)
-  
-  eval(UrlFetchApp.fetch('https://raw.githubusercontent.com/kevincar/gast/master/index.js').getContentText());
+    eval(UrlFetchApp.fetch('https://raw.githubusercontent.com/zixia/gast/master/src/gas-tap-lib.js').getContentText())
 } 
-let tap = new GasTap({logger: loggerFunc});
+var test = new GasTap();
+  
 
-tap.logger('testsing gastap');
 
-// test('check getFormdata', () => {
-//   let name= 'Mark Andog';
-//   let email = 'andogreymark@gmail.com';
-//   let birthday = '10/08/1995';
-//   expect(exportedFunc.getFormDataUI(name, email, birthday)).toBe('Mark Andog', 'andogreymark@gmail.com', '10/08/1995')
-// });
+function gastTestRunner() {
+  test('Docs exist', function (t) {
+    var url = 'https://docs.google.com/document/d/1VdfKbJpwMlfvQjN3whqLfq6Y7PqzOn0dZE2dr0SHMKo/edit';
+    var doc = DocumentApp.openByUrl(url);
+    t.ok(doc, 'Doc is Active');
+  });
 
-// test('check showSidebarUI', () => {
-//   expect(exportedFunc.showSidebarUI()).toBe('UI');
-// });
+  test.finish()
+}
